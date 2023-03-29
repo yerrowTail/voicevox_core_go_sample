@@ -106,7 +106,12 @@ func main() {
 
 	fmt.Print("生成する音声の文字列を入力>>")
 	speak_words := ""
-	fmt.Scan(&speak_words)
+	if len(os.Args) == 1 {
+		fmt.Scan(&speak_words)
+	} else {
+		speak_words = os.Args[1]
+		fmt.Println(speak_words)
+	}
 
 	fmt.Println("coreの初期化中")
 	initialize_options := voicevox_make_default_initialize_options()

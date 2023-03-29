@@ -27,7 +27,7 @@ jobs:
         run: go build
         working-directory: ./windows
       - name: Run
-        run: ./simple_tts
+        run: ./simple_tts string
         working-directory: ./windows
       - name: 音声ファイルの存在確認
         run: if exist speech.wav (exit 0) else (exit 1)
