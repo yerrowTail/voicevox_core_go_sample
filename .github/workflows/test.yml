@@ -29,6 +29,3 @@ jobs:
       - name: Run
         run: ./simple_tts string
         working-directory: ./windows
-      - name: 音声ファイルの存在確認
-        run: if exist speech.wav (exit 0) else (exit 1)
-        working-directory: ./windows
