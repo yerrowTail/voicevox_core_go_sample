@@ -17,18 +17,18 @@ jobs:
         run: |
           Invoke-WebRequest https://github.com/VOICEVOX/voicevox_core/releases/latest/download/download-windows-x64.exe -OutFile ./download.exe
           ./download.exe
-      - run: tree
-      - run: pwd
       - name: 必要ファイルの移動
         run: |
           cp  voicevox_core/onnxruntime.dll ./windows
           cp  voicevox_core/voicevox_core.dll ./windows
           cp -r   voicevox_core/model ./windows
           cp -r   voicevox_core/open_jtalk_dic_utf_8-1.11 ./windows
-        working-directory: ./windows
       - name: Build
         run: go build
+        working-directory: ./windows
       - name: Run
         run: ./simple_tts
+        working-directory: ./windows
       - name: 音声ファイルの存在確認
         run: if exist speech.wav (exit 0) else (exit 1)
+        working-directory: ./windows
