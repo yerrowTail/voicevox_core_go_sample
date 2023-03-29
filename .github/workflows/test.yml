@@ -17,6 +17,7 @@ jobs:
         run: |
           Invoke-WebRequest https://github.com/VOICEVOX/voicevox_core/releases/latest/download/download-windows-x64.exe -OutFile ./download.exe
           ./download.exe
+      - run: tree
       - name: 必要ファイルの移動
         run: |
           cp  voicevox_core/onnxruntime.dll ./windows
