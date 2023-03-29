@@ -19,10 +19,10 @@ jobs:
           ./download.exe
       - name: 必要ファイルの移動
         run: |
-          cp -r   voicevox_core/model ./windows
-          cp -r   voicevox_core/open_jtalk_dic_utf_8-1.11 ./windows
           cp  voicevox_core/onnxruntime.dll ./windows
           cp  voicevox_core/voicevox_core.dll ./windows
+          cp -r   voicevox_core/model ./windows
+          cp -r   voicevox_core/open_jtalk_dic_utf_8-1.11 ./windows
         working-directory: ./windows
       - name: Build
         run: go build
