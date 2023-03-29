@@ -25,7 +25,7 @@ jobs:
           cp  ./voicevox_core/voicevox_core.dll ./windows
         working-directory: ./windows
       - name: Build
-        uses: go build
+        run: go build
       - name: Run
         run: ./simple_tts
       - name: 音声ファイルの存在確認
