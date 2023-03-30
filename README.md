@@ -23,21 +23,6 @@ onnxruntime.dll
 voicevox_core.dll
 ```
 
-GPU 環境の場合は、追加で以下のファイルを配置してください
-
-cuda パスが通っている環境
-
-```
-onnxruntime_providers_shared.dll
-```
-
-cuda パスが通っていない環境
-
-```
-onnxruntime_providers_shared.dll
-
-```
-
 ### ビルド&実行
 
 `windows/`に移動します
