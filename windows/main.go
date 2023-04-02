@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"syscall"
 	"unsafe"
+
+	"golang.org/x/sys/windows"
 )
 
 const COREDLL_DICT_NAME = "voicevox_core.dll"
@@ -98,7 +99,7 @@ func GetWaveFileName() string {
 }
 
 func main() {
-	dll := syscall.NewLazyDLL(GetDllDict())
+	dll := windows.NewLazyDLL(GetDllDict())
 	voicevox_initialize := dll.NewProc("voicevox_initialize")
 	voicevox_tts := dll.NewProc("voicevox_tts")
 	voicevox_wav_free := dll.NewProc("voicevox_wav_free")
